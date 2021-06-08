@@ -1,4 +1,4 @@
-FROM node:latest
+FROM python:3
 
 LABEL maintainer="sasha.aladko@mail.ru"
 
