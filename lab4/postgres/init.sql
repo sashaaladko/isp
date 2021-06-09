@@ -1,0 +1,4 @@
+CREATE USER admin WITH PASSWORD 'devpass';
+
+CREATE DATABASE site_db;
+GRANT ALL PRIVILEGES ON DATABASE site_db TO admin;
