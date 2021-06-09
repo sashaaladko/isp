@@ -1,0 +1,19 @@
+version: "3"
+
+
+services:
+  postgresdb:
+    image: mysql:latest
+    environment:
+      - POSTGRES_PASSWORD=devpass
+    volumes:
+      - ./docker/postgres/init.sql:/docker-entrypoint-initbd.d/init.sql
+    ports:
+      - "5432:5432"
+
+  web:
+    image: sashaaladko/lab4
+    volumes:
+      - ./:/usr/src/app
+    depends_on:
+      - postgresdb
